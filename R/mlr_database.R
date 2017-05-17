@@ -25,4 +25,5 @@ mlr_getMongo <- function (host, db, collection){
   con <- mongo(collection = collection, db = db, url = host ,verbose = TRUE)
   mongoData <- con$find()
   rm(con)
+  mongoData
 }
