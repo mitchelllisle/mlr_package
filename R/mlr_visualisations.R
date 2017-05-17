@@ -2,7 +2,7 @@ mlr_quick_line <- function(x_data, y_data, colour = "#AE93B5", x_label = "x_data
     z <- data.frame(x_data, y_data)
     ggplot(z, aes(z$x_data, z$y_data)) +
     geom_line(color = colour, size = 0.8) +
-    geom_line(color = colour, size = 2) +
+    geom_point(color = colour, size = 2) +
     labs(x = x_label) +
     labs(y = y_label) +
     mlr_minimal()
