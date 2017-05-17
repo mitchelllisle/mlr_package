@@ -17,6 +17,16 @@ mlr_quick_bar <- function(x_data, y_data, colour = "#4A90E2", x_label = "x_data"
     mlr_minimal()
 }
 
+mlr_quick_bubble <- function(x_data, y_data, size_data, colour = "#4A90E2", x_label = "x_data", y_label = "y_data"){
+  z <- data.frame(x_data, y_data)
+  ggplot(z, aes(x = z$x_data, y = z$y_data, size = size_data)) +
+    geom_point(colour = colour, show.legend = FALSE) +
+    scale_size_continuous(range = c(5,20)) +
+    labs(x = x_label) +
+    labs(y = y_label) +
+    mlr_minimal()
+}
+
 
 mlr_basic <- function (base_size = 12, base_family = "") {
   theme_gray(base_size = base_size, base_family = base_family) %+replace%
