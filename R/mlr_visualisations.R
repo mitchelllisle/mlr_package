@@ -15,6 +15,7 @@ mlr_quick_bar <- function(x_data, y_data, colour = "#4A90E2", x_label = "x_data"
     geom_bar(stat = "identity", fill = colour, size = 0.8) +
     labs(x = x_label) +
     labs(y = y_label) +
+    geom_text(aes(label=point_labels), colour="black") +
     mlr_minimal()
 }
 
