@@ -9,7 +9,7 @@ mlr_quick_line <- function(x_data, y_data, colour = "#AE93B5", x_label = "x_data
     mlr_minimal()
 }
 
-mlr_quick_bar <- function(x_data, y_data, colour = "#4A90E2", x_label = "x_data", y_label = "y_data"){
+mlr_quick_bar <- function(x_data, y_data, colour = "#4A90E2", x_label = "x_data", y_label = "y_data", point_labels = ""){
   z <- data.frame(x_data, y_data)
   ggplot(z, aes(z$x_data, z$y_data)) +
     geom_bar(stat = "identity", fill = colour, size = 0.8) +
