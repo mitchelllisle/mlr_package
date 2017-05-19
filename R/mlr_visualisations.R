@@ -1,4 +1,4 @@
-mlr_quick_line <- function(x_data, y_data, colour = "#AE93B5", x_label = "x_data", y_label = "y_data", point_labels = ""){
+mlr_line <- function(x_data, y_data, colour = "#AE93B5", x_label = "x_data", y_label = "y_data", point_labels = ""){
     z <- data.frame(x_data, y_data)
     ggplot(z, aes(z$x_data, z$y_data)) +
     geom_line(color = colour, size = 0.8) +
@@ -9,17 +9,29 @@ mlr_quick_line <- function(x_data, y_data, colour = "#AE93B5", x_label = "x_data
     mlr_minimal()
 }
 
-mlr_quick_bar <- function(x_data, y_data, colour = "#4A90E2", x_label = "x_data", y_label = "y_data", point_labels = ""){
+
+mlr_bar <- function(x_data, y_data, colour = "#4A90E2", x_label = "x_data", y_label = "y_data", point_labels = ""){
   z <- data.frame(x_data, y_data)
-  ggplot(z, aes(z$x_data, z$y_data)) +
-    geom_bar(stat = "identity", size = 0.8, fill = colour) +
+  ggplot(z, aes(x=reorder(z$x_data,-z$y_data,sum), z$y_data, fill = colour)) +
+    geom_bar(stat = "identity", size = 0.8) +
     labs(x = x_label) +
     labs(y = y_label) +
-    geom_text(aes(label=point_labels), colour="black") +
+    geom_text(aes(label=point_labels, vjust = 1.5),  colour="black", position = position_stack(vjust = 1)) +
     mlr_minimal()
 }
 
-mlr_quick_bubble <- function(x_data, y_data, size_data, colour = "#4A90E2", x_label = "x_data", y_label = "y_data"){
+mlr_bar_time <- function(x_data, y_data, colour = "#4A90E2", x_label = "x_data", y_label = "y_data", point_labels = ""){
+  z <- data.frame(x_data, y_data)
+  ggplot(z, aes(x=factor(z$x_data), z$y_data, fill = colour)) +
+    geom_bar(stat = "identity", size = 0.8) +
+    labs(x = x_label) +
+    labs(y = y_label) +
+    geom_text(aes(label=point_labels, vjust = 1.5),  colour="black", position = position_stack(vjust = 1)) +
+    scale_fill_manual(values=c("#4B91F7", "#0FA865", "#F5BD02", "#E04F3F")) +
+    mlr_minimal()
+}
+
+mlr_bubble <- function(x_data, y_data, size_data, colour = "#4A90E2", x_label = "x_data", y_label = "y_data"){
   z <- data.frame(x_data, y_data)
   ggplot(z, aes(x = z$x_data, y = z$y_data, size = size_data)) +
     geom_point(colour = colour, show.legend = FALSE) +
@@ -30,7 +42,7 @@ mlr_quick_bubble <- function(x_data, y_data, size_data, colour = "#4A90E2", x_la
 }
 
 
-mlr_basic <- function (base_size = 12, base_family = "") {
+mlr_basic <- function(base_size = 12, base_family = "") {
   theme_gray(base_size = base_size, base_family = base_family) %+replace%
     theme(
       axis.text = element_text(colour = "#4A4A4A"),
