@@ -9,25 +9,26 @@ mlr_line <- function(x_data, y_data, colour = "#AE93B5", x_label = "x_data", y_l
     mlr_minimal()
 }
 
-
-mlr_bar <- function(x_data, y_data, colour = "#4A90E2", x_label = "x_data", y_label = "y_data", point_labels = ""){
+mlr_bar <- function(x_data, y_data, colour = "#4A90E2", x_label = "x_data", y_label = "y_data", title = "", point_labels = ""){
   z <- data.frame(x_data, y_data)
   ggplot(z, aes(x=reorder(z$x_data,-z$y_data,sum), z$y_data, fill = colour)) +
     geom_bar(stat = "identity", size = 0.8) +
     labs(x = x_label) +
     labs(y = y_label) +
+    labs(title = title) +
     geom_text(aes(label=point_labels, vjust = 1.5),  colour="black", position = position_stack(vjust = 1)) +
     mlr_minimal()
 }
 
-mlr_bar_time <- function(x_data, y_data, colour = "#4A90E2", x_label = "x_data", y_label = "y_data", point_labels = ""){
+mlr_bar_time <- function(x_data, y_data, colour = "#4A90E2", x_label = "x_data", y_label = "y_data", title = "", point_labels = ""){
   z <- data.frame(x_data, y_data)
   ggplot(z, aes(x=factor(z$x_data), z$y_data, fill = colour)) +
     geom_bar(stat = "identity", size = 0.8) +
     labs(x = x_label) +
     labs(y = y_label) +
+    labs(title = title) +
     geom_text(aes(label=point_labels, vjust = 1.5),  colour="black", position = position_stack(vjust = 1)) +
-    scale_fill_manual(values=c("#4B91F7", "#0FA865", "#F5BD02", "#E04F3F")) +
+    scale_fill_manual(values=c("#EA6532", "#4A90E2", "#47B191", "#FBC75D")) +
     mlr_minimal()
 }
 
@@ -56,10 +57,10 @@ mlr_basic <- function(base_size = 12, base_family = "") {
     )
 }
 
-mlr_minimal <-   function(base_size = 12, base_family = ""){
+mlr_minimal <-   function(base_size = 11, base_family = ""){
   theme_bw(base_size = base_size, base_family = base_family) %+replace%
     theme(axis.ticks = element_blank(), legend.background = element_blank(),
           legend.key = element_blank(), panel.background = element_blank(),
           panel.border = element_blank(), strip.background = element_blank(),
-          plot.background = element_blank(), complete = TRUE)
+          plot.background = element_blank(), complete = TRUE, plot.title = element_text(size = 16))
 }
