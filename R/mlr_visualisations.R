@@ -1,6 +1,6 @@
 mlr_line <- function(x_data, y_data, colour = "#AE93B5", x_label = "x_data", y_label = "y_data", point_labels = ""){
     z <- data.frame(x_data, y_data)
-    ggplot(z, aes(factor(z$x_data), z$y_data)) +
+    ggplot(z, aes(z$x_data, z$y_data)) +
     geom_line(color = colour, size = 0.8) +
     geom_point(color = colour, size = 2) +
     labs(x = x_label) +
@@ -37,6 +37,15 @@ mlr_bubble <- function(x_data, y_data, size_data, colour = "#4A90E2", x_label = 
   ggplot(z, aes(x = z$x_data, y = z$y_data, size = size_data)) +
     geom_point(colour = colour, show.legend = FALSE) +
     scale_size_continuous(range = c(5,20)) +
+    labs(x = x_label) +
+    labs(y = y_label) +
+    mlr_minimal()
+}
+
+mlr_scatter <- function(x_data, y_data, colour = "#4A90E2", x_label = "x_data", y_label = "y_data"){
+  z <- data.frame(x_data, y_data)
+  ggplot(z, aes(x = z$x_data, y = z$y_data)) +
+    geom_point(colour = colour, show.legend = FALSE) +
     labs(x = x_label) +
     labs(y = y_label) +
     mlr_minimal()
