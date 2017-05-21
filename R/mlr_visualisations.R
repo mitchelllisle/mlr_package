@@ -1,6 +1,6 @@
 mlr_line <- function(x_data, y_data, colour = "#AE93B5", x_label = "x_data", y_label = "y_data", point_labels = ""){
     z <- data.frame(x_data, y_data)
-    ggplot(z, aes(z$x_data, z$y_data)) +
+    ggplot(z, aes(factor(z$x_data), z$y_data)) +
     geom_line(color = colour, size = 0.8) +
     geom_point(color = colour, size = 2) +
     labs(x = x_label) +
