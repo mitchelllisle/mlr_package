@@ -2,10 +2,13 @@
 
 mlr_getPostgres <- function(host, port, user, password, db, query){
   pg = dbDriver("PostgreSQL")
-  con <- dbConnect(pg, user, password, host, db, port)
-  query_results <- dbGetQuery(con, query)
-  dbDisconnect(con)
-  query_results
+  con <- dbConnect(RPostgres::Postgres(), dbname = db,
+                   host = host,
+                   port = port, 
+                   user = user, 
+                   password = password)
+  res <- dbSendQuery(con, query)
+  dbFetch(res)
 }
 
 mlr_putPostgres_dataframe <- function(host, port, user, password, db, table, data) {
