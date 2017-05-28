@@ -1,16 +1,16 @@
 Package: mlr
-Type: Package
-Title: Tools For Working with Databases APIs and More
-Version: 0.1.0
-Author: Mitchell Lisle
-Maintainer: lislemitchell@gmail.com
-Description: Contains functions for databases APIs graphics and more
-License: None
-Encoding: UTF-8
-LazyData: true
-Imports:
-    dplyr,
-    RPostgreSQL,
-    RPostgres,
-    ggplot2,
-    aws.s3
+Version: 1.0.0
+Date: 2017-05-01
+Title: MLR Functions
+Author: Mitchell Lisle [aut, cre]
+Maintainer: Mitchell Lisle <lislemitchell@gmail.com>
+Imports: dplyr,
+        RPostgreSQL,
+        RPostgres,
+        aws.s3,
+        ggplot2
+Description: Functions for anyone who works with databases,
+  apis and graphs.
+License: GPL (>= 2)
+URL: http://mitchelllisle.github.io
+BugReports: https://github.com/mitchelllisle/mlr_r_package/issues
