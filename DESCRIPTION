@@ -11,6 +11,6 @@ LazyData: true
 Imports:
     dplyr,
     RPostgreSQL,
-    Rpostgres,
+    RPostgres,
     ggplot2,
     aws.s3
