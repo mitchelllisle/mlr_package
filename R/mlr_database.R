@@ -1,7 +1,6 @@
 #' @exportdev
 
 mlr_getPostgres <- function(host, port, user, password, db, query){
-  pg = dbDriver("PostgreSQL")
   con <- dbConnect(RPostgres::Postgres(), dbname = db,
                    host = host,
                    port = port, 

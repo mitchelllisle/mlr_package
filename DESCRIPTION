@@ -8,7 +8,8 @@ Imports: dplyr,
         RPostgreSQL,
         RPostgres,
         aws.s3,
-        ggplot2
+        ggplot2,
+        DBI
 Description: Functions for anyone who works with databases,
   apis and graphs.
 License: GPL (>= 2)
