@@ -11,10 +11,13 @@ mlr_getPostgres <- function(host, port, user, password, db, query){
 }
 
 mlr_putPostgres_dataframe <- function(host, port, user, password, db, table, data) {
-  pg = dbDriver("PostgreSQL")
   message("WARNING: This will drop table before inserting data. Cancel now if this is not acceptable")
   Sys.sleep(5)
-  con <- dbConnect(pg, user, password, host, db, port)
+  con <- dbConnect(RPostgres::Postgres(), dbname = db,
+                   host = host,
+                   port = port, 
+                   user = user, 
+                   password = password)
   if (dbExistsTable(con, table)) {
     dbRemoveTable(con, table)
   }
