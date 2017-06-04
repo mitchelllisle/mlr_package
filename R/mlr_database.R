@@ -32,3 +32,9 @@ mlr_getMongo <- function (host, db, collection){
   rm(con)
   mongoData
 }
+
+mlr_putMongo <- function (host, db, collection, data){
+  con <- mongo(collection = collection, db = db, url = host ,verbose = TRUE)
+  mongoData <- con$insert(dataframe)
+  rm(con)
+}
