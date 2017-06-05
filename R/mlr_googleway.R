@@ -15,8 +15,8 @@ mlr_google_place <- function(place){
 }
 
 mlr_googleway <- function(geocode_address, geocode_key, radar_radius, radar_type, places_key){
-  req <- mlr_geocode_address(address, geocode_key)
-  req2 <- mlr_google_radar(req$results.geometry$location$lat, req$results.geometry$location$lng, radius, type, places_key)
+  req <- mlr_geocode_address(geocode_address, geocode_key)
+  req2 <- mlr_google_radar(req$results.geometry$location$lat, req$results.geometry$location$lng, radar_radius, radar_type, places_key)
   places <- as.list(req2$X1)
   data <- lapply(places, FUN = mlr_google_place)
   dataframe <- ldply(data, data.frame)
