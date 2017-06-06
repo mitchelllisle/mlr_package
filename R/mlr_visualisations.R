@@ -1,3 +1,5 @@
+#' @exportdev
+
 mlr_line <- function(x_data, y_data, colour = "#AE93B5", x_label = "x_data", y_label = "y_data", point_labels = "", ribbon_lower = 0, ribbon_upper = 0){
     z <- data.frame(x_data, y_data)
     ggplot(z, aes(z$x_data, z$y_data)) +
