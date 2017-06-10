@@ -100,6 +100,8 @@ mlr_minimal_dark <- function(base_size = 11, base_family = ""){
           legend.text = element_text(color = "#FFFFFF"),
           panel.background = element_rect("#282828"),
           panel.border = element_blank(), 
+          panel.grid.major.x = element_blank(),
+          panel.grid.major.y = element_line(color = "#E9E9E9"),
           strip.background = element_rect("#282828"),
           plot.background = element_rect("#282828"), 
           complete = TRUE, plot.title = element_text(size = 16))
