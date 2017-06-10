@@ -42,7 +42,7 @@ mlr_bar_time <- function(x_data, y_data, colour = "#4A90E2", x_label = "x_data",
     labs(y = y_label) +
     labs(title = title) +
     geom_text(aes(label=point_labels, vjust = 1.5),  colour="black", position = position_stack(vjust = 1)) +
-    scale_fill_manual(values=c("#EA6532", "#4A90E2", "#47B191", "#FBC75D")) +
+    scale_fill_manual(values=c("#EA6532", "#4A90E2", "#47B191", "#FBC75D", "#AE93B5", "#FBC75D")) +
     mlr_minimal()
 }
 
