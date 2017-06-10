@@ -24,4 +24,5 @@ mlr_getAthena <- function(driver, s3_staging, query){
   
   query <- dbSendQuery(con, query)
   data <- fetch(query, -1, block = 999)
+  return(data)
 }
