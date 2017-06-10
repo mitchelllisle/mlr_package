@@ -80,7 +80,7 @@ mlr_basic <- function(base_size = 12, base_family = "") {
     )
 }
 
-mlr_minimal <-   function(base_size = 11, base_family = ""){
+mlr_minimal <- function(base_size = 11, base_family = ""){
   theme_bw(base_size = base_size, base_family = base_family) %+replace%
     theme(axis.ticks = element_blank(), legend.background = element_blank(),
           legend.key = element_blank(), panel.background = element_blank(),
@@ -88,10 +88,19 @@ mlr_minimal <-   function(base_size = 11, base_family = ""){
           plot.background = element_blank(), complete = TRUE, plot.title = element_text(size = 16))
 }
 
-mlr_minimal_dark <-   function(base_size = 11, base_family = ""){
+mlr_minimal_dark <- function(base_size = 11, base_family = ""){
   theme_bw(base_size = base_size, base_family = base_family) %+replace%
-    theme(axis.ticks = element_line("#282828"), legend.background = element_rect("#282828"),
-          legend.key = element_rect("#282828"), panel.background = element_rect("#282828"),
-          panel.border = element_blank(), strip.background = element_rect("#282828"),
-          plot.background = element_rect("#282828"), complete = TRUE, plot.title = element_text(size = 16))
+    theme(axis.ticks = element_line(color = "#282828"), 
+          axis.text = element_text(color = "#FFFFFF"),
+          axis.title.x = element_text(color = "#FFFFFF"),
+          axis.title.y = element_text(color = "#FFFFFF"),
+          axis.line = element_blank(),
+          legend.background = element_rect("#282828"),
+          legend.key = element_rect("#282828"), 
+          legend.text = element_text(color = "#FFFFFF"),
+          panel.background = element_rect("#282828"),
+          panel.border = element_blank(), 
+          strip.background = element_rect("#282828"),
+          plot.background = element_rect("#282828"), 
+          complete = TRUE, plot.title = element_text(size = 16))
 }
