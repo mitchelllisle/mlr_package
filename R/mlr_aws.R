@@ -9,9 +9,9 @@ mlr_s3_putObject <- function(object, file_name){
   put_object(tmp, object = file_name)
 }  
 
-mlr_getAthena <- function(driver, s3_staging, query){
+mlr_getAthena <- function(driver_location, s3_staging, query){
   # Get Athena Driver
-  fil <- driver
+  fil <- driver_location
   
   # Initiate driver
   drv <- JDBC(driverClass="com.amazonaws.athena.jdbc.AthenaDriver", fil, identifier.quote="'")
