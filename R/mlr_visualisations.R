@@ -34,7 +34,7 @@ mlr_bar <- function(x_data, y_data, colour = "#4A90E2", x_label = "x_data", y_la
     mlr_minimal()
 }
 
-mlr_bar_time <- function(x_data, y_data, colour = "#4A90E2", x_label = "x_data", y_label = "y_data", title = "", point_labels = ""){
+mlr_bar_time <- function(x_data, y_data, colour = "#4A90E2", x_label = "x_data", y_label = "y_data", title = "", point_labels = "", group_colours = c("#EA6532", "#4A90E2", "#47B191", "#FBC75D", "#AE93B5", "#FBC75D")){
   z <- data.frame(x_data, y_data)
   ggplot(z, aes(x=factor(z$x_data), z$y_data, fill = colour)) +
     geom_bar(stat = "identity", size = 0.8) +
@@ -42,7 +42,7 @@ mlr_bar_time <- function(x_data, y_data, colour = "#4A90E2", x_label = "x_data",
     labs(y = y_label) +
     labs(title = title) +
     geom_text(aes(label=point_labels, vjust = 1.5),  colour="black", position = position_stack(vjust = 1)) +
-    scale_fill_manual(values=c("#EA6532", "#4A90E2", "#47B191", "#FBC75D", "#AE93B5", "#FBC75D")) +
+    scale_fill_manual(values=group_colours) +
     mlr_minimal()
 }
 
@@ -64,7 +64,6 @@ mlr_scatter <- function(x_data, y_data, colour = "#4A90E2", x_label = "x_data", 
     labs(y = y_label) +
     mlr_minimal()
 }
-
 
 mlr_basic <- function(base_size = 12, base_family = "") {
   theme_gray(base_size = base_size, base_family = base_family) %+replace%
