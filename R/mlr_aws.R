@@ -12,12 +12,10 @@ mlr_s3_putObject <- function(object, file_name){
 mlr_getAthena <- function(driver_location, s3_staging, query){
   # Get Athena Driver
   fil <- driver_location
-  
   # Initiate driver
   drv <- JDBC(driverClass="com.amazonaws.athena.jdbc.AthenaDriver", fil, identifier.quote="'")
-  
   # Create connection
-  con <- jdbcConnection <- dbConnect(drv, 'jdbc:awsathena://athena.us-east-1.amazonaws.com:443/',
+  con <- jdbcConnection <- RJDBC::dbConnect(drv, 'jdbc:awsathena://athena.us-east-1.amazonaws.com:443/',
                                      s3_staging_dir = s3_staging,
                                      user = Sys.getenv("AWS_ACCESS_KEY_ID"),
                                      password = Sys.getenv("AWS_SECRET_ACCESS_KEY"))
