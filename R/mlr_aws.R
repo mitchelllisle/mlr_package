@@ -21,6 +21,6 @@ mlr_getAthena <- function(driver_location, s3_staging, query){
                                      password = Sys.getenv("AWS_SECRET_ACCESS_KEY"))
   
   query <- RJDBC::dbSendQuery(con, query)
-  data <- DBI::fetch(query, -1, block = 999)
+  data <- fetch(query, -1, block = 999)
   return(data)
 }
