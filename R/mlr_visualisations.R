@@ -92,8 +92,8 @@ mlr_minimal_dark <- function(base_size = 11, base_family = ""){
     theme(
       # Specify axis options
       axis.line = element_blank(),  
-      axis.text.x = element_text(size = base_size*0.8, color = "white", lineheight = 0.9),  
-      axis.text.y = element_text(size = base_size*0.8, color = "white", lineheight = 0.9),  
+      axis.text.x = element_text(size = base_size, color = "white", lineheight = 0.9),  
+      axis.text.y = element_text(size = base_size, color = "white", lineheight = 0.9),  
       axis.ticks = element_line(color = "white", size  =  0.2),  
       axis.title.x = element_text(size = base_size, color = "white", margin = margin(0, 10, 0, 0)),  
       axis.title.y = element_text(size = base_size, color = "white", angle = 90, margin = margin(0, 10, 0, 0)),  
@@ -106,10 +106,10 @@ mlr_minimal_dark <- function(base_size = 11, base_family = ""){
       legend.key.width = NULL,      
       legend.text = element_text(size = base_size*0.8, color = "white"),  
       legend.title = element_text(size = base_size*0.8, face = "bold", hjust = 0, color = "white"),  
-      legend.position = "right",  
+      legend.position = "none",  
       legend.text.align = NULL,  
       legend.title.align = NULL,  
-      legend.direction = "vertical",  
+      legend.direction = "horizontal",  
       legend.box = NULL, 
       # Specify panel options
       panel.background = element_rect(fill = "#242424", color  =  NA),  
