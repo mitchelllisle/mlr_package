@@ -1,9 +1,9 @@
 #' @exportdev
 
-mlr_line <- function(x_data, y_data, colour = "#AE93B5", x_label = "x_data", y_label = "y_data", point_labels = ""){
+mlr_line <- function(x_data, y_data, colour = "#F76A63", x_label = "x_data", y_label = "y_data", point_labels = ""){
     z <- data.frame(x_data, y_data)
     ggplot(z, aes(z$x_data, z$y_data)) +
-    geom_line(color = colour, size = 0.8) +
+    geom_line(color = colour, size = 1) +
     geom_point(color = colour, size = 2) +
     labs(x = x_label) +
     labs(y = y_label) +
@@ -87,23 +87,43 @@ mlr_minimal <- function(base_size = 11, base_family = ""){
           plot.background = element_blank(), complete = TRUE, plot.title = element_text(size = 16))
 }
 
-mlr_minimal_dark <- function(base_size = 8, base_family = ""){
-  theme_bw(base_size = base_size, base_family = base_family) %+replace%
-    theme(axis.ticks = element_line(color = "#282828"), 
-          axis.text = element_text(color = "#FFFFFF"),
-          axis.title.x = element_text(color = "#FFFFFF"),
-          axis.title.y = element_text(color = "#FFFFFF"),
-          axis.line = element_blank(),
-          legend.position = "top",
-          legend.background = element_rect(fill = "#282828"),
-          legend.key = element_rect(fill = "#282828"), 
-          legend.title = element_text(color = "#FFFFFF"), 
-          legend.text = element_text(color = "#FFFFFF"),
-          panel.background = element_rect(fill = "#282828"),
-          panel.border = element_blank(), 
-          panel.grid.major.x = element_blank(),
-          panel.grid.major.y = element_line(color = "#E9E9E9"),
-          strip.background = element_rect(fill = "#282828"),
-          plot.background = element_rect(fill = "#282828"), 
-          complete = TRUE, plot.title = element_text(size = 16))
+mlr_minimal_dark <- function(base_size = 11, base_family = ""){
+  theme_grey(base_size = base_size, base_family = base_family) %+replace%
+    theme(
+      # Specify axis options
+      axis.line = element_blank(),  
+      axis.text.x = element_text(size = base_size*0.8, color = "white", lineheight = 0.9),  
+      axis.text.y = element_text(size = base_size*0.8, color = "white", lineheight = 0.9),  
+      axis.ticks = element_line(color = "white", size  =  0.2),  
+      axis.title.x = element_text(size = base_size, color = "white", margin = margin(0, 10, 0, 0)),  
+      axis.title.y = element_text(size = base_size, color = "white", angle = 90, margin = margin(0, 10, 0, 0)),  
+      axis.ticks.length = unit(0.3, "lines"),   
+      # Specify legend options
+      legend.background = element_rect(color = NA, fill = "#242424"),  
+      legend.key = element_rect(color = "white",  fill = "#242424"),  
+      legend.key.size = unit(1.2, "lines"),  
+      legend.key.height = NULL,  
+      legend.key.width = NULL,      
+      legend.text = element_text(size = base_size*0.8, color = "white"),  
+      legend.title = element_text(size = base_size*0.8, face = "bold", hjust = 0, color = "white"),  
+      legend.position = "right",  
+      legend.text.align = NULL,  
+      legend.title.align = NULL,  
+      legend.direction = "vertical",  
+      legend.box = NULL, 
+      # Specify panel options
+      panel.background = element_rect(fill = "#242424", color  =  NA),  
+      panel.border = element_rect(fill = NA, color = "white"),  
+      panel.grid.major = element_line(color = "grey20", linetype = "dashed"),  
+      panel.grid.minor = element_line(color = "grey20", linetype = "dashed"),  
+      panel.spacing = unit(0.5, "lines"),   
+      # Specify facetting options
+      strip.background = element_rect(fill = "grey30", color = "grey10"),  
+      strip.text.x = element_text(size = base_size*0.8, color = "white"),  
+      strip.text.y = element_text(size = base_size*0.8, color = "white",angle = -90),  
+      # Specify plot options
+      plot.background = element_rect(color = "#242424", fill = "#242424"),  
+      plot.title = element_text(size = base_size*1.2, color = "white"),  
+      plot.margin = unit(rep(1, 4), "lines")
+    )
 }

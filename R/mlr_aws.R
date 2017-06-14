@@ -2,10 +2,10 @@ mlr_s3_readCSV <- function(s3_file_path){
   read.csv(text = rawToChar(get_object(object = s3_file_path)))
 }
 
-mlr_s3_putObject <- function(object, file_name){
+mlr_s3_putObject <- function(data_frame, file_name, col.names = FALSE, row.names = FALSE, quote = FALSE, sep = ","){
   tmp <- tempfile()
   on.exit(unlink(tmp))
-  utils::write.csv(object, file = tmp)
+  utils::write.table(data_frame, file = tmp, col.names = col.names, row.names = row.names, quote = quote, sep = sep)
   put_object(tmp, object = file_name)
 }  
 
