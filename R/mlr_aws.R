@@ -2,11 +2,16 @@ mlr_s3_readCSV <- function(s3_file_path){
   read.csv(text = rawToChar(get_object(object = s3_file_path)))
 }
 
-mlr_s3_putObject <- function(data_frame, file_name, col.names = FALSE, row.names = FALSE, quote = FALSE, sep = ","){
+mlr_s3_putObject <- function(data, s3_path, col.names = FALSE, row.names = FALSE, quote = FALSE, sep = ",", type = "csv"){
   tmp <- tempfile()
   on.exit(unlink(tmp))
-  utils::write.table(data_frame, file = tmp, col.names = col.names, row.names = row.names, quote = quote, sep = sep)
-  put_object(tmp, object = file_name)
+  if(type == "csv"){
+    utils::write.table(data, file = tmp, col.names = col.names, row.names = row.names, quote = quote, sep = sep)  
+  }
+  if(type == "json"){
+    write_json(x = data, path = tmp)
+  }
+  put_object(tmp, object = s3_path)
 }  
 
 mlr_getAthena <- function(driver_location, s3_staging, query){
