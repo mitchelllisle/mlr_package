@@ -87,7 +87,7 @@ mlr_minimal <- function(base_size = 11, base_family = ""){
           plot.background = element_blank(), complete = TRUE, plot.title = element_text(size = 16))
 }
 
-mlr_minimal_dark <- function(base_size = 11, base_family = ""){
+mlr_minimal_dark <- function(base_size = 12, base_family = ""){
   theme_grey(base_size = base_size, base_family = base_family) %+replace%
     theme(
       # Specify axis options
