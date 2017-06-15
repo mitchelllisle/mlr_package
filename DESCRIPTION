@@ -1,17 +1,21 @@
 Package: mlr
-Version: 1.0.0
+Version: 0.1
 Date: 2017-05-01
 Title: MLR Functions
-Author: Mitchell Lisle [aut, cre]
-Maintainer: Mitchell Lisle <lislemitchell@gmail.com>
+Authors@R: person("Mitchell", "Lisle", email = "lislemitchell@gmail.com",
+  role = c("aut", "cre"))
 Imports: dplyr,
         RPostgreSQL,
         RPostgres,
         aws.s3,
         ggplot2,
-        DBI
-Description: Functions for anyone who works with databases,
-  apis and graphs.
-License: GPL (>= 2)
+        DBI,
+        jsonlite,
+        mongolite
+Description: Functions for anyone who works with tech at BigDatr. This package includes
+    various functions for working with ggplot2, databases such as Mongo, Postgres and Redshift,
+    as well as various other technologies (s3, Athena etc). It also provides some R functionality
+    for interacting with BigDatr/Blueflag specific outputs (such as ChartData).
 URL: http://mitchelllisle.github.io
 BugReports: https://github.com/mitchelllisle/mlr_r_package/issues
+RoxygenNote: 6.0.1
