@@ -10,7 +10,7 @@ mlr_chart_data <- function(dataframe, labels = ...){
   #' @examples
   #' mlr_chart_data(no_of_users, c("Date", "Users"))
   
-  columns <- data.frame(names(no_of_users),c(labels))
+  columns <- data.frame(names(dataframe),c(labels))
   names(columns) <- c("key", "label")
   
   json_data <- jsonlite::toJSON(list(rows = dataframe, columns = columns), pretty = TRUE)
