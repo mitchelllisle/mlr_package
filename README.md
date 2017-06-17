@@ -1,6 +1,4 @@
-# mlr_r_package
-An R Package for basic operations in R
+# datrscience_jarvispack
+R Package for working with Jarvis user data. 
 
-to install
-
-```devtools::install_github("mitchelllisle/mlr_r_package")```
+```devtools::install_github("quietdeeds/datrscience_jarvispack", auth_token = Sys.getenv("GITHUB_PAT"))```

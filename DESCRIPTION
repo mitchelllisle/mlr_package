@@ -1,7 +1,7 @@
-Package: mlr
+Package: jarvispack
 Version: 0.1
-Date: 2017-05-01
-Title: MLR Functions
+Date: 2017-06-12
+Title: Jarvispack Functions
 Authors@R: person("Mitchell", "Lisle", email = "lislemitchell@gmail.com",
   role = c("aut", "cre"))
 Imports: dplyr,
@@ -12,10 +12,7 @@ Imports: dplyr,
         DBI,
         jsonlite,
         mongolite
-Description: Functions for anyone who works with tech at BigDatr. This package includes
-    various functions for working with ggplot2, databases such as Mongo, Postgres and Redshift,
-    as well as various other technologies (s3, Athena etc). It also provides some R functionality
-    for interacting with BigDatr/Blueflag specific outputs (such as ChartData).
+Description: Functions for working with user data for Jarvis.
 URL: http://mitchelllisle.github.io
-BugReports: https://github.com/mitchelllisle/mlr_r_package/issues
+BugReports: https://github.com/quietdeeds/jarvispack/issues
 RoxygenNote: 6.0.1
