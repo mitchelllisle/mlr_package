@@ -9,7 +9,6 @@ r_github_packages:
 
 script:
   - R CMD build .
-  - R CMD check *tar.gz
 
 after_success:
   - Rscript -e 'library(covr);codecov()'

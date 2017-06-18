@@ -4,13 +4,7 @@ Date: 2017-05-01
 Title: MLR Functions
 Authors@R: person("Mitchell", "Lisle", email = "lislemitchell@gmail.com",
   role = c("aut", "cre"))
-Imports: dplyr,
-        RPostgreSQL,
-        RPostgres,
-        aws.s3,
-        ggplot2,
-        DBI,
-        jsonlite,
+Imports: dplyr, RPostgreSQL, RPostgres, aws.s3, ggplot2, DBI, jsonlite,
         mongolite
 Description: Functions for anyone who works with tech at BigDatr. This package includes
     various functions for working with ggplot2, databases such as Mongo, Postgres and Redshift,
@@ -20,3 +14,7 @@ URL: http://mitchelllisle.github.io
 BugReports: https://github.com/mitchelllisle/mlr_r_package/issues
 RoxygenNote: 6.0.1
 Suggests: testthat
+NeedsCompilation: no
+Packaged: 2017-06-18 06:05:25 UTC; mitchelllisle
+Author: Mitchell Lisle [aut, cre]
+Maintainer: Mitchell Lisle <lislemitchell@gmail.com>
