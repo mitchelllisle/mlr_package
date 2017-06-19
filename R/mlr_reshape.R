@@ -14,3 +14,12 @@ mlr_extract_hashes <- function(vec){
   df = df[order(df$freq,decreasing = TRUE),]
   return(df)
 }
+
+mlr_replace_all_na <- function(dataframe){
+  if(!is.data.frame(dataframe)){
+    message("Please supply a dataframe")
+  } else {
+    dataframe[is.na(dataframe)] <- 0
+    data.frame(dataframe) 
+  }
+}
