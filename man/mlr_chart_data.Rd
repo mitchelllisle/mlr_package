@@ -4,12 +4,13 @@
 \alias{mlr_chart_data}
 \title{Converts key:value pairs into ChartData specification written by developers at BigDatr}
 \usage{
-mlr_chart_data(row_key1, row_key2, row_value1, row_value2, label_value)
+mlr_chart_data(dataframe, labels = ...)
 }
 \arguments{
-\item{row_key}{the key for the key:value pair}
+\item{dataframe}{the data to be used for rows. Must be a column for each key:value pair
+with column name as the key and row as the value.}
 
-\item{row_value}{the value for the key:value pair}
+\item{labels}{a `c()` must be passed for each label you are assigning in columns.}
 }
 \value{
 Outputs a JSON structure with Key:Value pairs in rows and columns. This JSON
@@ -20,5 +21,5 @@ this final step.
 Converts key:value pairs into ChartData specification written by developers at BigDatr
 }
 \examples{
-no_of_users.json <- mlr_chart_data("date", "count", no_of_users$date, no_of_users$no_of_users, "NoOfUsers")
+mlr_chart_data(no_of_users, c("Date", "Users"))
 }

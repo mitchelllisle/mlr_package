@@ -19,4 +19,5 @@ Description: Functions for anyone who works with tech at BigDatr. This package i
 URL: http://mitchelllisle.github.io
 BugReports: https://github.com/mitchelllisle/mlr_r_package/issues
 RoxygenNote: 6.0.1
+License: file LICENSE
 Suggests: testthat
