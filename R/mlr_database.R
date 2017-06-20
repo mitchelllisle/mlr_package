@@ -26,9 +26,9 @@ mlr_putPostgres_dataframe <- function(host, port, user, password, db, table, dat
   dbDisconnect(con)
 }
 
-mlr_getMongo <- function (host, db, collection){
-  con <- mongo(collection = collection, db = db, url = host ,verbose = TRUE)
-  mongoData <- con$find()
+mlr_getMongo <- function (host, port, db, collection, query = NULL, fields = NULL){
+  con <- mongo(collection = collection, db =  db, url = paste0("mongodb://",host,":", port) ,verbose = TRUE)
+  mongoData <- con$find(query = query, fields = fields)
   rm(con)
   mongoData
 }
