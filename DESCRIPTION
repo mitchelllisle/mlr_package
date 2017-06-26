@@ -5,8 +5,6 @@ Title: MLR Functions
 Authors@R: person("Mitchell", "Lisle", email = "lislemitchell@gmail.com",
   role = c("aut", "cre"))
 Imports: dplyr,
-        RPostgreSQL,
-        RPostgres,
         aws.s3,
         ggplot2,
         DBI,
