@@ -31,6 +31,3 @@ mlr_business_days <- function(start, end){
   bizcount$cout_of_bizdays
 }
 
-count_biz_days("2017-06-26", "2017-07-03")
-
-
