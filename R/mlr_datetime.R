@@ -25,7 +25,7 @@ mlr_business_days <- function(start, end){
   bizDays <- data.frame(timeDate::isBizday(tS))
   
   bizcount <- bizDays %>%
-    dplyr::filter(isBizday.tS. == "TRUE") %>%
+    dplyr::filter(timeDate..isBizday.tS. == "TRUE") %>%
     summarise(cout_of_bizdays = n())
   
   bizcount$cout_of_bizdays
