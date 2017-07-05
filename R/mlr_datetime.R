@@ -22,7 +22,7 @@ mlr_datetime_aggregation <- function(data, seconds = 60, origin = "1970-01-01") 
 mlr_business_days <- function(start, end){
   
   tS <- timeDate::timeSequence(from = paste(start), to = paste(end))
-  bizDays <- data.frame(isBizday(tS))
+  bizDays <- data.frame(timeDate::isBizday(tS))
   
   bizcount <- bizDays %>%
     dplyr::filter(isBizday.tS. == "TRUE") %>%
