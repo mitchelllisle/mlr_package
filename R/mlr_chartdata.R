@@ -10,10 +10,20 @@
 #' mlr_chart_data(no_of_users, c("Date", "Users"))
 
 mlr_chart_data <- function(dataframe, labels = ...){
-  columns <- data.frame(names(dataframe),c(labels))
-  names(columns) <- c("key", "label")
+  columns <- data.frame(names(dataframe))
+  names(columns) <- c("key")
   
   json_data <- jsonlite::toJSON(list(rows = dataframe, columns = columns), pretty = TRUE)
+  json_data <- jsonlite::fromJSON(json_data)
+  return(json_data)
+}
+
+
+tm_chart_data <- function (dataframe) 
+{
+  columns <- data.frame(names(dataframe))
+  json_data <- jsonlite::toJSON(list(rows = dataframe), 
+                                pretty = TRUE)
   json_data <- jsonlite::fromJSON(json_data)
   return(json_data)
 }
