@@ -10,7 +10,7 @@
 #' mlr_chart_data(no_of_users, c("Date", "Users"))
 
 mlr_chart_data <- function(dataframe, include_columns = FALSE, labels = ...){
-  if(include_columns == FALSE){
+  if(include_columns == TRUE){
     columns <- data.frame(names(dataframe))
     names(columns) <- c("key")
     
