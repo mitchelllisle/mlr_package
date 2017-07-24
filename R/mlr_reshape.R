@@ -23,3 +23,7 @@ mlr_replace_all_na <- function(dataframe){
     data.frame(dataframe) 
   }
 }
+
+mlr_date_local <- function(date){
+  as.character(str_replace_all(date, "-", ""))
+}
