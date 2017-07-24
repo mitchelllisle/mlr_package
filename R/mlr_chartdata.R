@@ -11,8 +11,8 @@
 
 mlr_chart_data <- function(dataframe, include_columns = FALSE, labels = ...){
   if(include_columns == TRUE){
-    columns <- data.frame(names(dataframe))
-    names(columns) <- c("key")
+    columns <- data.frame(names(dataframe), c(labels))
+    names(columns) <- c("key", "label")
     
     json_data <- jsonlite::toJSON(list(rows = dataframe, columns = columns), pretty = TRUE)
   } else {
