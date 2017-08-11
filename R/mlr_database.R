@@ -1,11 +1,11 @@
 #' @exportdev
 
-mlr_getPostgres <- function(host, port, user, password, db, query){
-  con <- dbConnect(RPostgres::Postgres(), dbname = db,
-                   host = host,
-                   port = port, 
-                   user = user, 
-                   password = password)
+mlr_getPostgres <- function(query){
+  con <- dbConnect(RPostgres::Postgres(), dbname = Sys.getenv("POSTGRES_DB"),
+                   host = Sys.getenv("POSTGRES_HOST"),
+                   port = Sys.getenv("POSTGRES_PORT"), 
+                   user = Sys.getenv("POSTGRES_USER"), 
+                   password = Sys.getenv("POSTGRES_PASS"))
   res <- dbSendQuery(con, query)
   dbFetch(res)
 }
