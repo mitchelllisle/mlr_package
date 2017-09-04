@@ -4,12 +4,6 @@ Date: 2017-05-01
 Title: MLR Functions
 Authors@R: person("Mitchell", "Lisle", email = "lislemitchell@gmail.com",
   role = c("aut", "cre"))
-Imports: dplyr,
-        aws.s3,
-        ggplot2,
-        DBI,
-        jsonlite,
-        mongolite
 Description: Functions for anyone who works with tech at BigDatr. This package includes
     various functions for working with ggplot2, databases such as Mongo, Postgres and Redshift,
     as well as various other technologies (s3, Athena etc). It also provides some R functionality
